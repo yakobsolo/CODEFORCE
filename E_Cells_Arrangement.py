@@ -78,8 +78,10 @@ def Primefactorization(n: int) -> list[int]:
 
 for _ in range(II()):
     n = II()
-    for i in range(1, n+1):
+    for i in range(1, n-1):
         print(i, i)
+    print(n-1, n)
+    print(n, n)
     print()
 
 
