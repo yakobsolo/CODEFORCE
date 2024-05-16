@@ -74,13 +74,19 @@ def Primefactorization(n: int) -> list[int]:
   
     return factorization
  
+
+
 for _ in range(II()):
-    N, Z = MII()
+    n, m = MII()
+    a = LMII()
+    b = LMII()
 
-    arr = LMII()
+    Bor = 0
+    for val in b:
+        Bor |= val
+    aor = 0
     mx = 0
-    for val in arr:
-        mx = max(mx, val | Z)
-    print(mx)
-
-    
+    for val in a:
+        aor^=val
+        mx ^= val|Bor
+    print(min(aor, mx), max(aor, mx))
