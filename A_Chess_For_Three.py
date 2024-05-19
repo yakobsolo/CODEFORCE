@@ -85,7 +85,7 @@ for _ in range(II()):
             c-=1
         ans+=1
         a-=1
-    if (a+b+c)%2 == 1:
-        print(-1)
+    if (a+b+c) % 2 == 1:
+        print( -1 )
     else:
-        print(ans+min(b, c))
+        print(ans + min(b, c))
