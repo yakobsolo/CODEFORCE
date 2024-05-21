@@ -88,4 +88,6 @@ for _ in range(II()):
     if (a+b+c) % 2 == 1:
         print( -1 )
     else:
+
+        
         print(ans + min(b, c))

@@ -111,6 +111,8 @@ for _ in range(II()):
 
     l, r = 1, N
 
+    
+
     while l<=r:
         mid = l + (r-l)//2
         # print(arr, mid)

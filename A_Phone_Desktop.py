@@ -82,7 +82,7 @@ for _ in range(II()):
     ans = math.ceil(y/2)
     available = 0
     if y%2 == 0:
-        available = ans*7
+        available = ans*7 
     else:
         available = (ans-1)*7 + 11
     
