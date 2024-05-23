@@ -95,25 +95,34 @@ for _ in range(II()):
             if "N" in direction:
                 nind = direction.index("N")
                 sind = direction.index("S")
-                
+                if count["N"] ==2:
+                    
+                    for i in range(4):
 
-                for i in range(4):
-                    if direction[i] == "S" and i != sind:
-                        ans[i] == "H"
-                    if direction[i] == "N" and i!= nind:
-                        ans[i] = "H"
+                        if direction[i] == "S" and i != sind:
+                            ans[i] = "H"
+                        elif direction[i] == "N" and i!= nind:
+                            ans[i] = "H"
+                else:
+                    for i in range(4):
+                        if direction[i] == "E" or direction[i] == 'W':
+                            ans[i] = "H"
                 print("".join(ans))
                 continue
             else:
                 wind = direction.index("W")
                 eind = direction.index("E")
                 
-                print(">...")
-                for i in range(4):
-                    if direction[i] == "E" and i != eind:
-                        ans[i] == "H"
-                    if direction[i] == "W" and i!= wind:
-                        ans[i] = "H"
+                if count["W"] == 2:
+                    for i in range(4):
+                        if direction[i] == "E" and i != eind:
+                            ans[i] = "H"
+                        elif direction[i] == "W" and i!= wind:
+                            ans[i] = "H"
+                else:
+                    for i in range(4):
+                        if direction[i] == "N" or direction[i] == 'S':
+                            ans[i] = "H"
                 print("".join(ans))
                 continue
             
