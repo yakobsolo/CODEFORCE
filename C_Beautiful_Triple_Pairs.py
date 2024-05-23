@@ -92,6 +92,8 @@ for _ in range(II()):
         cases.append((b1, 0, b3))
         cases.append((0, b2, b3))
 
+
+        
         for case in cases:
             ans+=count[case] - count[triple]
             count[case]+=1
