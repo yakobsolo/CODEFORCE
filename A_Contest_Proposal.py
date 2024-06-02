@@ -74,19 +74,18 @@ def Primefactorization(n: int) -> list[int]:
   
     return factorization
  
-
 for _ in range(II()):
-    n, m = MII()
+    N = II()
+    a = LMII()
+    b = LMII()
 
-    ans = n
-    for i in range(32):
-        ln = 1 << i
-
-        x = ln - (n % ln)
-        y = ln - x + 1
-        print(ln, x, y)
-        if n - y < 0:
-            y = float("inf")
-        if min(x, y) <= m:
-            ans |= ln
+    i = 0
+    ans = 0
+    j=0
+    while i< N:
+        while j<N and a[i]>b[j]:
+            j+=1
+            ans+=1
+        j+=1
+        i+=1
     print(ans)
