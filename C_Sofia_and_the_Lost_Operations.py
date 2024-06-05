@@ -26,20 +26,20 @@ def II():
     return int(input())
  
 def MII():
-    return map(int, input().split())
+    return map(str, input().split())
  
 def LI():
     return list(input().split())
  
 def LMII():
-    return list(map(int,  input().split()))
+    return list(map(str,  input().split()))
 
  
-def GMI():
-    return map(lambda x: int(x) - 1, input().split())
+# def GMI():
+#     return map(lambda x: int(x) - 1, input().split())
  
-def LGMI():
-    return list(map(lambda x: int(x) - 1, input().split()))
+# def LGMI():
+#     return list(map(lambda x: int(x) - 1, input().split()))
  
 
 
@@ -81,13 +81,15 @@ for _ in range(II()):
     a = LMII()
     b = LMII()
     m = II()
-    dd = LMII()
+    d = LMII()
 
-    count = Counter(dd)
+    count = defaultdict(int)
+    for v in d:
+        count[v]+=1
     end = False
     notFound = False
     for i in range(N):
-        if b[i] == dd[-1]:
+        if b[i] == d[-1]:
             end = True
         if a[i] != b[i]:
             if b[i] in count:

@@ -75,67 +75,44 @@ def Primefactorization(n: int) -> list[int]:
     return factorization
  
 
-for j in range(II()):
-    n = II()
-    a = LMII()
 
-    b = []
-    for i in range(1, n):
-        b.append(math.gcd(a[i], a[i-1]))
-    c = 0
-    j = inf
+for _ in range(II()):
+    n, m = MII()
+    a , b = set(), set()
+    mta, mtb = [], []
+    flg = False
+
+    for _ in range(n):
+        row = LMII()
+        
+        rw = tuple(sorted(row))
+        mta.append(row)
+        a.add(rw)
+    for _ in range(n):
+        row = LMII()      
+        rw = tuple(sorted(row))
+        b.add(rw)
+        mtb.append(row)
+    e, j = set(), set()
+    for c in range(m):
+        rwa, rwb = [],[]
+        for r in range(n):
+            rwa.append(mta[r][c])
+            rwb.append(mtb[r][c])
+        e.add(tuple(sorted(rwa)))
+        j.add(tuple(sorted(rwb)))
     
-    for i in range(1, n-1):
-        if b[i]<b[i-1]:
-            c +=1
-            j = i
+    for v in a:
+        if v not in b:
+            flg = True
             break
-    if j != inf:
-        
-        aa = a.copy()
-        aaa = a.copy()
-        aaaa = a.copy()
-        aa.pop(j+1)
-        bb = []
-        
-        for i in range(1, n-1):
-            bb.append(math.gcd(aa[i], aa[i-1]))
-
-        cc= 0
-        for i in range(1, n-2):
-            if bb[i]<bb[i-1]:
-                cc +=1
-                break
-        if cc == 0:
-            c = 0
-        bbb = []
-        aaa.pop(j-1)
-        for i in range(1, n-1):
-            bbb.append(math.gcd(aaa[i], aaa[i-1]))
-
-        ccc= 0
-        for i in range(1, n-2):
-            if bbb[i]<bbb[i-1]:
-                ccc +=1
-                break
-        if ccc == 0:
-            c = 0
-        bbbb = []
-        aaaa.pop(j)
-        for i in range(1, n-1):
-            bbbb.append(math.gcd(aaaa[i], aaaa[i-1]))
-
-        cccc= 0
-        for i in range(1, n-2):
-            if bbbb[i]<bbbb[i-1]:
-                cccc +=1
-                break
-        if cccc == 0:
-            c = 0
-    if c == 0:
-        print("YES")
-    else:
+    for v in e:
+        if v not in j:
+            flg = True
+            break
+    
+       
+    if flg:
         print("NO")
-    
-
-    
+    else:
+        print("YES")
