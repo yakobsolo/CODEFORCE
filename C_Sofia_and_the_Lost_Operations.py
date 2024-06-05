@@ -83,30 +83,25 @@ for _ in range(II()):
     m = II()
     dd = LMII()
 
-    i = 0
-    while i<N and m>0:
-        if a[i] != b[i]
-    # d= defaultdict(int)
-    # for v in dd:
-    #     d[v] +=1
-
-
-    # i = 0
-    # while i < N and m>0:
-    #     if a[i] != b[i]:
-    #         print(d)
-    #         if b[i] in d:
-
-    #             a[i] = b[i]
-    #             m-=1
-    #             d[a[i]]-=1
-    #             print(a[i])
-    #             if d[a[i]]==0:
-    #                 del d[a[i]]
-    #     i+=1
-    # print(a, b)
-    # if a==b:
-    #     print("YES")
-    # else:
-    #     print("NO")
-
+    count = Counter(dd)
+    end = False
+    notFound = False
+    for i in range(N):
+        if b[i] == dd[-1]:
+            end = True
+        if a[i] != b[i]:
+            if b[i] in count:
+                count[b[i]] -=1
+                if count[b[i]] == 0:
+                    del count[b[i]]
+            else:
+                notFound = True
+                break
+    if notFound:
+        print("NO")
+    else:
+        if end:
+            print("YES")
+        else:
+            print("NO")
+        

@@ -127,3 +127,6 @@ for j in range(II()):
         print("YES")
     else:
         print("NO")
+    
+
+    
