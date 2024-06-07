@@ -1,4 +1,3 @@
-
 import re
 import functools
 import random
@@ -78,15 +77,14 @@ def Primefactorization(n: int) -> list[int]:
 for _ in range(II()):
     n, m = MII()
 
-    ans = n
+    l, r=  max(0, n-m), n+m
+    ans = 0
     for i in range(32):
-        ln = 1 << i
+        p = 1<<i
 
-        x = ln - (n % ln)
-        y = ln - x + 1
-        print(ln, x, y)
-        if n - y < 0:
-            y = float("inf")
-        if min(x, y) <= m:
-            ans |= ln
+        if p & l>0 or p&r > 0:
+            ans+=p
+            continue
+        if r-l >p:
+            ans+=p
     print(ans)
