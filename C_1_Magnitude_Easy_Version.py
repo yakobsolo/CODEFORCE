@@ -78,35 +78,9 @@ def Primefactorization(n: int) -> list[int]:
 for _ in range(II()):
     n = II()
     arr = LMII()
-    ans = [0]
-    stack = [(0, 0)]
-    
-
-
-    visted = set()
-    dp = [[0, 0] for i in range(n)]
-    while stack:
-        ind, path = stack.pop()
-
-        if ind +1 == n:
-            ans[0] = max(ans[0], abs(path + arr[ind]))
-            continue
-        # visted.add(path+arr[ind])
-        stack.append((ind + 1, path + arr[ind]))
-        # if path + arr[ind] > dp[ind][1]:
-            
-        #     dp[ind][1] = path + arr[ind]
-        if path + arr[ind] < 0 :
-            if  path + arr[ind] < dp[ind][0]: 
+    mx, mn = 0, 0
+    for val in arr:
+        mx = max(abs(mn+val) , abs(mx + val))
+        mn +=val
         
-                stack.append((ind + 1, abs(path + arr[ind])))
-                dp[ind][0] = path  + arr[ind]
-        
-        
-        
-
-        
-            
-
-   
-    print(ans[0])
+    print(mx)
