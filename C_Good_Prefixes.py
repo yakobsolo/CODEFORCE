@@ -74,3 +74,16 @@ def Primefactorization(n: int) -> list[int]:
   
     return factorization
  
+
+for _ in range(II()):
+    n = II()
+    arr = LMII()
+    ans = 0
+    prefix = 0
+    mx = 0
+    for v in arr:
+        prefix +=v
+        mx = max(mx, v)
+        if prefix-mx == mx:
+            ans+=1
+    print(ans)

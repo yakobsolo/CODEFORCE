@@ -74,8 +74,26 @@ def Primefactorization(n: int) -> list[int]:
   
     return factorization
  
+
+
 for _ in range(II()):
-    n = II()
-    if n==3: print(3)
-    else:
-        print(2)
+    n, m = MII()
+    arr = []
+    for _ in range(n):
+        row = list(I())
+        arr.append(row)
+    flg = False
+    for r in range(n):
+        for c in range(m):
+            if arr[r][c] == "#":
+                flg = True
+                rr = r
+                while rr<n and arr[rr][c] =="#":
+                    rr+=1
+
+                print(r+math.ceil((rr-r)/2), c+1)
+                break
+        if flg:
+            break
+                
+                
