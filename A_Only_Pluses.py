@@ -74,3 +74,11 @@ def Primefactorization(n: int) -> list[int]:
   
     return factorization
  
+
+
+for _ in range(II()):
+    arr = LMII()
+    for _ in range(5):
+        arr.sort()
+        arr[0] +=1
+    print(arr[0]*arr[1]*arr[2])
